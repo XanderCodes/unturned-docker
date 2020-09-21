@@ -12,21 +12,30 @@ mkdir -p $MODULES_DIR
 cd $MODULES_DIR
 
 if [ ! -d "$MODULES_DIR/Rocket.Unturned" ]; then
-    if [ "$SERVER_TYPE" == "rm4" ]; then
-        curl https://ci.rocketmod.net/job/Rocket.Unturned/lastSuccessfulBuild/artifact/Rocket.Unturned/bin/Release/Rocket.zip -o Rocket.zip
-        unzip Rocket.zip
-        mv Modules/* ./
-        rmdir Modules
-        rm -rf ./Scripts
-        rm README
-        rm Rocket.zip
-    elif [ "$SERVER_TYPE" == "rm5" ]; then
-        curl -L https://ci.appveyor.com/api/buildjobs/bjt7acowdq73nh4u/artifacts/Rocket.Unturned-5.0.0.237.zip -o Rocket.zip
-        unzip Rocket.zip
-        rm README.md
-        rm LICENSE
-        rm Rocket.zip
-    fi    
+    # if [ "$SERVER_TYPE" == "rm4" ]; then
+    #     curl https://ci.rocketmod.net/job/Rocket.Unturned/lastSuccessfulBuild/artifact/Rocket.Unturned/bin/Release/Rocket.zip -o Rocket.zip
+    #     unzip Rocket.zip
+    #     mv Modules/* ./
+    #     rmdir Modules
+    #     rm -rf ./Scripts
+    #     rm README
+    #     rm Rocket.zip
+    # elif [ "$SERVER_TYPE" == "rm5" ]; then
+    #     curl -L https://ci.appveyor.com/api/buildjobs/bjt7acowdq73nh4u/artifacts/Rocket.Unturned-5.0.0.237.zip -o Rocket.zip
+    #     unzip Rocket.zip
+    #     rm README.md
+    #     rm LICENSE
+    #     rm Rocket.zip
+    # fi    
+
+    # Install LDM
+    curl https://github.com/SmartlyDressedGames/Legally-Distinct-Missile/releases/download/v4.9.3.3/Rocket.Unturned.zip -o Rocket.zip
+    unzip Rocket.zip
+    mv Modules/* ./
+    rmdir Modules
+    rm README
+    rm LICENCE
+    rm Rocket.zip
 fi
 
 # Start game
