@@ -10,6 +10,8 @@ echo "#############"
 ./steamcmd.sh +login $STEAM_USERNAME $STEAM_PASSWORD $STEAM_GUARD_TOKEN $STEAM_CMD_ARGS +force_install_dir $GAME_INSTALL_DIR +@sSteamCmdForcePlatformBitness 64 +app_update $GAME_ID +quit
 
 cp -f /opt/steamcmd/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
+
+mkdir ../../home/steam/.steam/sdk64
 cp -f /opt/steamcmd/linux64/steamclient.so ../../home/steam/.steam/sdk64/steamclient.so
 echo "### Files ###"
 echo "$(ls)"
@@ -49,4 +51,4 @@ fi
 
 # Start game
 cd $SCRIPT_DIR
-./start_gameserver.sh "$@"
+screen -d -m ./start_gameserver.sh "$@"
