@@ -51,4 +51,4 @@ fi
 
 # Start game
 cd $SCRIPT_DIR
-screen -d -m ./start_gameserver.sh "$@"
+./start_gameserver.sh "$@"
