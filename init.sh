@@ -41,6 +41,9 @@ if [ ! -d "$MODULES_DIR/Rocket.Unturned" ]; then
     rm Rocket.zip
 fi
 
+cp -f linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
+ln -s linux64/steamclient.so /home/steam/.steam/sdk64/steamclient.so
+
 # Start game
 cd $SCRIPT_DIR
 ./start_gameserver.sh "$@"
