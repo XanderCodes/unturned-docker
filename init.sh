@@ -9,6 +9,11 @@ echo "$(ls)"
 # Update / install server
 ./steamcmd.sh +login $STEAM_USERNAME $STEAM_PASSWORD $STEAM_GUARD_TOKEN $STEAM_CMD_ARGS +force_install_dir $GAME_INSTALL_DIR +@sSteamCmdForcePlatformBitness 64 +app_update $GAME_ID +quit
 
+cp -f /opt/steamcmd/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
+ln -s /opt/steamcmd/linux64/steamclient.so /home/steam/.steam/sdk64/steamclient.so
+
+echo "$(ls)"
+
 # Optionlly install RocketMod
 export MODULES_DIR=$GAME_INSTALL_DIR/Modules
 mkdir -p $MODULES_DIR
