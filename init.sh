@@ -21,7 +21,7 @@ echo "#############"
 export MODULES_DIR=$GAME_INSTALL_DIR/Modules
 mkdir -p $MODULES_DIR
 cd $MODULES_DIR
-cp Extras/Rocket.Unturned $MODULES_DIR
+cp /steam/Untuned/Extras/Rocket.Unturned $MODULES_DIR
 
 # if [ ! -d "$MODULES_DIR/Rocket.Unturned" ]; then
 #     # if [ "$SERVER_TYPE" == "rm4" ]; then
